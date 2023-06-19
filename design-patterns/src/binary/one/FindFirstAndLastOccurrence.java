@@ -1,11 +1,10 @@
 package binary.one;
 
 import java.util.ArrayList;
-import java.util.List;
 
-public class FindFirstAndLastOccurence {
+public class FindFirstAndLastOccurrence {
     public static void main(String[] args) {
-        ;long[] arr = {1, 3, 5, 5, 5, 5, 67, 123, 125};
+        long[] arr = {1, 3, 5, 5, 5, 5, 67, 123, 125};
         int x = 5;
         int floor = lowerBound(arr, x);
         int ceil = upperbound(arr, x);
