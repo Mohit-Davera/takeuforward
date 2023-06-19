@@ -2,7 +2,7 @@ package sort;
 
 import java.util.Arrays;
 
-public class RotateMatrix {
+public class  RotateMatrix {
     public static void main(String[] args) {
         int[][] array = {
                 {1, 2, 3},
@@ -21,7 +21,7 @@ public class RotateMatrix {
     }
 
     public static void transpose ( int[][] matrix){
-        for (int i = 0; i < matrix.length - 2; i++) {
+        for (int i = 0; i < matrix.length - 1; i++) {
             for (int j = i + 1; j < matrix[0].length; j++) {
                 int temp = matrix[i][j];
                 matrix[i][j] = matrix[j][i];
