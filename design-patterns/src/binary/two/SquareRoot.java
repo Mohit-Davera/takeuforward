@@ -6,7 +6,9 @@ public class SquareRoot {
     }
 
     static long root(long N) {
-        long low = 1, high = N, ans = -1;
+        long low = 1;
+        long high = N;
+        long ans = -1;
         while (low <= high) {
             long mid = (high + low) / 2;
             if (mid * mid == N)
