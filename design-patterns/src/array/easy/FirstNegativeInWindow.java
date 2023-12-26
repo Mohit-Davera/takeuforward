@@ -1,4 +1,4 @@
-package array.old.easy;
+package array.easy;
 
 import java.util.LinkedList;
 import java.util.Queue;

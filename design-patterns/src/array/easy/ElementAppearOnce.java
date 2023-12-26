@@ -1,4 +1,4 @@
-package array.old.easy;
+package array.easy;
 
 public class ElementAppearOnce {
     public static int bruteforce(int A[], int N) {

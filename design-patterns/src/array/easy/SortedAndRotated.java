@@ -1,4 +1,4 @@
-package array.old.easy;
+package array.easy;
 
 public class SortedAndRotated {
     public boolean check(int[] nums) {

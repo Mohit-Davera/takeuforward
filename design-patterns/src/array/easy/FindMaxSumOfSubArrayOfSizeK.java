@@ -1,4 +1,4 @@
-package array.old.easy;
+package array.easy;
 
 public class FindMaxSumOfSubArrayOfSizeK {
 

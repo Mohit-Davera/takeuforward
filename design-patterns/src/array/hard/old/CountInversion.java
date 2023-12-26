@@ -1,4 +1,4 @@
-package array.old.hard;
+package array.hard.old;
 
 public class CountInversion {
     public static void main(String[] args) {

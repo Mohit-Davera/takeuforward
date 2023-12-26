@@ -1,4 +1,4 @@
-package array.old.easy;
+package array.easy;
 
 public class FindZeroFlipM {
     static int findZeroesTrial(int arr[], int n, int m) {

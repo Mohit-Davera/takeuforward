@@ -1,4 +1,4 @@
-package array.old.easy;
+package array.easy;
 
 public class MaxOnesIn2DMatrix {
     static int logic(int[][] mat, int n, int m) {
