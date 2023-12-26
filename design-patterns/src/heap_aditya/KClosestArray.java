@@ -1,35 +1,34 @@
 package heap_aditya;
 
-import java.util.PriorityQueue;
 
-public class KSortedArray {
+import java.util.*;
+
+public class KClosestArray {
 
     public static void main(String[] args) {
-        int[] nums = {6, 5, 3, 2, 8, 10, 9};
-        int k = 3;
-        solution(nums,k);
+        int[] nums = {1, 2, 3, 4, 5};
+        int k = 4;
+        int x = 3;
+        solution(nums, k, x);
     }
 
-    public static void solution(int[] nums, int k) {
-        PriorityQueue<Integer> pq = new PriorityQueue<>();
-        int index = 0;
-        for (int i: nums) {
-            pq.add(i);
-            if(pq.size() > k +1){
-                nums[index++] = pq.poll();
+    public static void solution(int[] nums, int k, int x) {
+        PriorityQueue<Pair<Integer, Integer>> pq = new PriorityQueue<>((p1, p2) -> Objects.equals(p2.getKey(), p1.getKey()) ? p2.getValue() - p1.getValue() : p2.getKey() - p1.getKey());
+        for (int i = 0; i < nums.length; i++) {
+            int abs = Math.abs(nums[i] - x);
+            pq.add(new Pair<>(abs, nums[i]));
+            if (pq.size() > k) {
+                pq.poll();
             }
         }
-
-        while (pq.size() != 0){
-            nums[index++] = pq.poll();
+        List<Integer> list = new LinkedList<>();
+        while (!pq.isEmpty()) {
+            Pair<Integer, Integer> poll = pq.poll();
+            list.add(poll.getValue());
+            System.out.print(poll.getValue() + " ");
         }
-        print( nums);
-    }
 
-    public static void print(int[] nums) {
-        for (int i :
-                nums) {
-            System.out.print(i + " ");
-        }
+        System.out.println(list);
     }
 }
+

@@ -1,4 +1,4 @@
-package builder;
+package designpatterns.builder;
 
 public class Vehicle {
     private final String engine;

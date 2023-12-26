@@ -1,6 +1,6 @@
 package binary.two;
 
-public class Striver {
+public class Bouquets {
     public static void main(String[] args) {
         System.out.println(minDays(new int[]{1,10,3,10,2}, 3, 1));
     }

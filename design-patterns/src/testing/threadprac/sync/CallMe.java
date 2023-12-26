@@ -1,4 +1,4 @@
-package testing.threadprac;
+package testing.threadprac.sync;
 
 public class CallMe {
     synchronized void call(String msg) {

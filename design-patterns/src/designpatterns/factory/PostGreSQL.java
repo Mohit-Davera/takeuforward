@@ -1,4 +1,4 @@
-package factory;
+package designpatterns.factory;
 
 public class PostGreSQL implements Database {
     @Override

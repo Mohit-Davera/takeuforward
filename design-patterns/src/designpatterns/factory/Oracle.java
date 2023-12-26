@@ -1,4 +1,4 @@
-package factory;
+package designpatterns.factory;
 
 public class Oracle implements Database {
     @Override

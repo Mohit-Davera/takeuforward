@@ -1,12 +1,11 @@
 package recursion;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
-public class SubSetSumTwo {
+public class SubSetTwo {
     public static void main(String[] args) {
-        int[] nums = new int[]{2, 3};
+        int[] nums = new int[]{1,2,2};
 
         List<List<Integer>> ans = new ArrayList<>();
         subSetSum(nums, 0, new ArrayList<>(), ans);
@@ -14,13 +13,12 @@ public class SubSetSumTwo {
     }
 
     static void subSetSum(int[] nums, int index, List<Integer> curr, List<List<Integer>> ans) {
-
+        ans.add(new ArrayList<>(curr));
         for (int i = index; i < nums.length; i++) {
             if (i > index && nums[i] == nums[i - 1]) continue;
             curr.add(nums[i]);
-            subSetSum(nums, i, curr, ans);
+            subSetSum(nums, i + 1, curr, ans);
             curr.remove(curr.size()-1);
         }
-
     }
 }

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class CombinationSum2 {
+public class CombinationSumTwo {
     public static void main(String[] args) {
         int[] nums = new int[]{10,1,2,7,6,1,5};
         int target = 8;
@@ -22,6 +22,7 @@ public class CombinationSum2 {
         }
         for (int i = index; i < nums.length; i++) {
             if(i>index && nums[i-1] == nums[i]) continue;
+            if(nums[i] > target) break;// sorted so avoid useless
             curr.add(nums[i]);
             combinationSumTwo(nums, target - nums[i], i + 1, curr, ans);
             curr.remove(curr.size() - 1);

@@ -11,13 +11,13 @@ public class NextSmallestElementRight {
         Stack<Integer> stack = new Stack<>();
         int n = nums.length;
         int[] ans = new int[nums.length];
-        for (int i = 0; i < n ; i++) {
+        for (int i = n-1; i >= 0 ; i--) {
             if (stack.empty()) {
                 ans[i] = -1;
             } else if (!stack.isEmpty() && stack.peek() < nums[i]) {
                 ans[i] = stack.peek();
             } else {
-                while (!stack.isEmpty() && stack.peek() <= nums[i]) {
+                while (!stack.isEmpty() && stack.peek() >= nums[i]) {
                     stack.pop();
                 }
                 if (stack.empty()) ans[i] = -1;
@@ -28,18 +28,7 @@ public class NextSmallestElementRight {
         }
 
         print(ans);
-        //reverse
-        int i = 0;
-        while (i <= n / 2) {
-            int temp = ans[i];
-            ans[i] = ans[n - i - 1];
-            ans[n - i - 1] = temp;
-            i++;
-        }
-
         return ans;
-
-
     }
 
     static void print(int[] nums){

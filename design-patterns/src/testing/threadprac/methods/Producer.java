@@ -1,2 +1,17 @@
-package testing.threadprac.methods;public class Producer {
+package testing.threadprac.methods;
+
+class Producer implements Runnable {
+    Q q;
+
+    Producer(Q q) {
+        this.q = q;
+        new Thread(this, "Producer").start();
+    }
+
+    public void run() {
+        int i = 0;
+        while (true) {
+            q.put(i++);
+        }
+    }
 }

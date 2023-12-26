@@ -4,17 +4,17 @@ import java.util.Arrays;
 
 public class KokoBananas {
     public static void main(String[] args) {
-        int logic = logic(new int[]{805306368,805306368,805306368}, 1000000000);
+        int logic = minEatingSpeed(new int[]{805306368,805306368,805306368}, 1000000000);
         System.out.println(logic);
     }
 
-    public static int logic(int[] piles,int H){
+    public static int minEatingSpeed(int[] piles,int H){
         Arrays.sort(piles);
         int low = 1;
         int high = maxFinder(piles);
         int lowest = high;
         while (low<=high){
-            int mid = (low + high)/2;
+            int mid = low + ((high - low)/2);
             if(canEatAll(piles,mid,H)){
                 lowest = mid;
                 high = mid - 1;
@@ -27,7 +27,7 @@ public class KokoBananas {
     }
 
     public static boolean canEatAll(int[] piles, int k,int h){
-        int hourCount = 0;
+        long hourCount = 0;
         for (int pile :
                 piles) {
             hourCount += pile/k;

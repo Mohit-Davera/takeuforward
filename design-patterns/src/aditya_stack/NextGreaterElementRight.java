@@ -2,7 +2,9 @@ package aditya_stack;
 
 import java.util.Stack;
 
-public class NextGreaterElement {
+import static aditya_stack.NextSmallestElementLeft.print;
+
+public class NextGreaterElementRight {
     public static void main(String[] args) {
         solution(new int[]{4,5,2,25});
     }
@@ -27,7 +29,7 @@ public class NextGreaterElement {
             stack.add(nums[i]);
         }
 
-
+        print(ans);
         //reverse
         int i = 0;
         while (i <= n / 2) {

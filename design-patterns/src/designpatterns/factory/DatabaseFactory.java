@@ -1,4 +1,4 @@
-package factory;
+package designpatterns.factory;
 
 public class DatabaseFactory {
     public static Database getInstance(String name){

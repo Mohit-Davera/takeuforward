@@ -5,20 +5,27 @@ import java.util.List;
 
 public class CombinationSum {
     public static void main(String[] args) {
-        int[] nums = new int[]{3,1,2};
-        printSubSeq(nums,0,new ArrayList<>());
+        int[] nums = new int[]{2, 3, 6, 7};
+        int target = 7;
+
+        List<List<Integer>> ans = new ArrayList<>();
+        combinationSumOne(nums, target, 0, new ArrayList<>(), ans);
+        System.out.println(ans);
     }
 
-    static void printSubSeq(int[] nums, int i, List<Integer> curr){
-        if(i == nums.length){
-            System.out.println(curr);
+    static void combinationSumOne(int[] nums, int target, int index, List<Integer> curr, List<List<Integer>> ans) {
+        if (index == nums.length) {
+            if (target == 0)
+                ans.add(new ArrayList<>(curr));
             return;
         }
 
-        curr.add(nums[i]);
-        printSubSeq(nums,i+1,curr);
+        if (nums[index] <= target) {
+            curr.add(nums[index]);
+            combinationSumOne(nums, target - nums[index], index, curr, ans);
+            curr.remove(curr.size() - 1);
+        }
+        combinationSumOne(nums, target, index + 1, curr, ans);
 
-        curr.remove(curr.size() - 1);
-        printSubSeq(nums,i+1,curr);
     }
 }

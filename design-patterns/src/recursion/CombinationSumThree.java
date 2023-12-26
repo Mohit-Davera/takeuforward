@@ -6,25 +6,27 @@ import java.util.List;
 
 public class CombinationSumThree {
     public static void main(String[] args) {
-        int[] nums = new int[]{10,1,2,7,6,1,5};
-        int target = 8;
-
+        int k = 3;
+        int n = 9;
         List<List<Integer>> ans = new ArrayList<>();
-        Arrays.sort(nums);
-        combinationSumTwo(nums, target, 0, new ArrayList<>(), ans);
+        combinationSumThree(n, k, 1, 0, new ArrayList<>(), ans);
         System.out.println(ans);
+
     }
 
-    static void combinationSumTwo(int[] nums, int target, int index, List<Integer> curr, List<List<Integer>> ans) {
-        if (target == 0){
-            ans.add(new ArrayList<>(curr));
+    static void combinationSumThree(int n, int k, int index, int sum, List<Integer> curr, List<List<Integer>> ans) {
+        if (curr.size() == k) {
+            if(sum == n)
+                ans.add(new ArrayList<>(curr));
             return;
         }
-        for (int i = index; i < nums.length; i++) {
-            if(i>index && nums[i-1] == nums[i]) continue;
-            if(nums[i] > target) break;// sorted so avoid useless
-            curr.add(nums[i]);
-            combinationSumTwo(nums, target - nums[i], i + 1, curr, ans);
+        for (int i = index; i <= n; i++) {
+            if ((sum + i) > n)
+                break;
+            curr.add(i);
+            sum += i;
+            combinationSumThree(n, k, i + 1, sum, curr, ans);
+            sum -= i;
             curr.remove(curr.size() - 1);
         }
 

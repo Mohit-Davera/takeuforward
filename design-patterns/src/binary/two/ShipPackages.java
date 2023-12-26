@@ -3,6 +3,8 @@ package binary.two;
 public class ShipPackages {
     public static void main(String[] args) {
         System.out.println(logic(new int[]{1,2,3,1,1},4));
+
+        System.out.println(feasible(new int[]{1,2,3,1,1},2  ,4));
     }
 
     public static int logic(int[] weights, int days){

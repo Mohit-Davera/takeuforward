@@ -7,6 +7,30 @@ public class RotateBy90Degree {
         bruteLogic(mat);
     }
 
+    public void rotate(int[][] mat) {
+
+        int rows = mat.length;
+        int columns = rows;
+
+        //Transpose
+        for(int i =0; i<rows;i++){
+            for(int j=i;j<columns;j++){
+                int temp = mat[i][j];
+                mat[i][j] = mat[j][i];
+                mat[j][i] = temp;
+            }
+        }
+
+        //reverse
+        for(int i =0; i<rows;i++){
+            for(int j=0;j<columns/2;j++){
+                int temp = mat[i][j];
+                mat[i][j] = mat[i][columns - j -1];
+                mat[i][columns - j -1] = temp;
+            }
+        }
+    }
+
     //90 degree anti clock wise meaning rightmost column will be topmost row same for other column
     public static void bruteLogic(int[][] matrix) {
         int[][] temp = new int[matrix.length][matrix[0].length];

@@ -1,5 +1,8 @@
 package binary.two;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class NthRootOfM {
     public static void main(String[] args) {
         System.out.println(logic(2,9));

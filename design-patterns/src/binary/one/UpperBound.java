@@ -3,12 +3,12 @@ package binary.one;
 public class UpperBound {
     public static void main(String[] args) {
         int[] arr = {1, 2, 8, 10, 11, 12, 19};
-        System.out.println(lowerBound(arr,0));
+        System.out.println(lowerBound(arr,25));
     }
 
     public static int lowerBound(int arr[], int target) {
         int low = 0;
-        int ans = -1;
+        int ans = arr.length;
         int high = arr.length - 1;
         while (low <= high) {
             int mid = (low + high) / 2;

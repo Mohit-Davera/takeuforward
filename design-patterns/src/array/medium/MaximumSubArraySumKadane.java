@@ -47,22 +47,4 @@ public class MaximumSubArraySumKadane {
         int i = kadane(new int[]{-1,-2,-3,-4});
         System.out.println(i);
     }
-
-    public static void subArrayWithGivenSum(int[] arr,int k){
-        int start = 0;
-        int end = 0;
-        int sum=arr[0];
-        while(end<arr.length){
-            if(start<=end && sum>k){
-                sum-=arr[start];
-                start++;
-            }
-            if(sum == k){
-
-            }
-            end++;
-            if(end<arr.length)
-                sum+=arr[end];
-        }
-    }
 }

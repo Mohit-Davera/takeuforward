@@ -4,7 +4,7 @@ import java.util.Stack;
 
 public class NextSmallestElementLeft {
     public static void main(String[] args) {
-        solution(new int[]{4,5,2,25});
+        solution(new int[]{4,5,2,10,8});
     }
 
     public static int[] solution(int[] nums) {
@@ -14,10 +14,10 @@ public class NextSmallestElementLeft {
         for (int i = 0; i < n ; i++) {
             if (stack.empty()) {
                 ans[i] = -1;
-            } else if (stack.size() > 0 && stack.peek() > nums[i]) {
+            } else if (!stack.isEmpty() && stack.peek() < nums[i]) {
                 ans[i] = stack.peek();
             } else {
-                while (stack.size() > 0 && stack.peek() <= nums[i]) {
+                while (!stack.isEmpty() && stack.peek() >= nums[i]) {
                     stack.pop();
                 }
                 if (stack.empty()) ans[i] = -1;
@@ -27,7 +27,7 @@ public class NextSmallestElementLeft {
             stack.add(nums[i]);
         }
 
-
+        print(ans);
         //reverse
         int i = 0;
         while (i <= n / 2) {
@@ -40,5 +40,12 @@ public class NextSmallestElementLeft {
         return ans;
 
 
+    }
+
+    static void print(int[] nums){
+        for (int i :
+                nums) {
+            System.out.print(i+" ");
+        }
     }
 }

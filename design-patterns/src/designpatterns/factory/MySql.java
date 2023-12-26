@@ -1,4 +1,4 @@
-package factory;
+package designpatterns.factory;
 
 
 public class MySql implements Database {
@@ -6,4 +6,5 @@ public class MySql implements Database {
     public String getName() {
         return "MYSQL";
     }
+
 }

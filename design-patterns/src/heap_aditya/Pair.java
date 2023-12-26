@@ -1,7 +1,7 @@
 package heap_aditya;
 
 
-class Pair<K, V> {
+public class Pair<K, V> {
     K key;
     V value;
 

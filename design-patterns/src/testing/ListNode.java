@@ -1,13 +1,13 @@
 package testing;
 
-class ListNOde {
+class ListNode {
     public int data;
-    public ListNOde next;
+    public ListNode next;
 
-    public ListNOde() {
+    public ListNode() {
     }
 
-    public ListNOde(int data) {
+    public ListNode(int data) {
         this.data = data;
     }
 
@@ -19,11 +19,11 @@ class ListNOde {
         this.data = data;
     }
 
-    public ListNOde getNext() {
+    public ListNode getNext() {
         return next;
     }
 
-    public void setNext(ListNOde next) {
+    public void setNext(ListNode next) {
         this.next = next;
     }
 }

@@ -1,48 +1,41 @@
 package aditya_stack;
 
-import java.util.Arrays;
+import java.util.Stack;
 
-public class Test {
+public class HistogramTUF {
 
     public static void main(String[] args) {
-        System.out.println(largestRectangleArea(new int[]{6,2,5,4,5,1,6}));
+
+        System.out.println(largestRectangleArea(new int[]{2,1,5,6,2,3}));
     }
+
     public static int largestRectangleArea(int[] heights) {
 
         int n = heights.length;
-        int[] prevSmaller = new int[n];
-        int[] nextSmaller = new int[n];
+        int[] left = new int[n];
+        int[] right = new int[n];
 
-        Arrays.fill(prevSmaller, -1);
-        Arrays.fill(nextSmaller, n);
+        Stack<Integer> stack = new Stack<>();
 
-        for(int i = n - 2; i >= 0; i--){
-            for(int j = i + 1; j < n;){
-                if(heights[j] < heights[i]){
-                    nextSmaller[i] = j;
-                    break;
-                } else {
-                    if(nextSmaller[j] == n) break;
-                    else j = nextSmaller[j];
-                }
-            }
+        for (int i = 0; i < n; i++) {
+            while (!stack.isEmpty() && heights[stack.peek()] >= heights[i]) stack.pop();
+            if (stack.isEmpty()) left[i] = 0;
+            else left[i] = stack.peek() + 1;
+            stack.add(i);
         }
 
-        for(int i = 1; i < n; i++){
-            for(int j = i - 1; j >= 0;){
-                if(heights[j] < heights[i]){
-                    prevSmaller[i] = j;
-                    break;
-                } else {
-                    if(prevSmaller[j] == -1) break;
-                    else j = prevSmaller[j];
-                }
-            }
+        stack.clear();
+
+        for (int i = n - 1; i >= 0; i--) {
+            while (!stack.isEmpty() && heights[stack.peek()] >= heights[i]) stack.pop();
+            if (stack.isEmpty()) right[i] = n - 1;
+            else right[i] = stack.peek() - 1;
+            stack.add(i);
         }
 
         int res = 0;
-        for(int i = 0; i < n; i++){
-            res = Math.max(res, heights[i] * (nextSmaller[i] - prevSmaller[i] - 1));
+        for (int i = 0; i < n; i++) {
+            res = Math.max(res, heights[i] * (right[i] - left[i] + 1));
         }
         return res;
     }

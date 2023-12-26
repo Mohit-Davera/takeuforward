@@ -1,4 +1,4 @@
-package testing.threadprac;
+package testing.threadprac.sync;
 
 public class Synch {
     public static void main(String args[]) {

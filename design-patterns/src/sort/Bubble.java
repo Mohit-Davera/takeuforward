@@ -1,7 +1,5 @@
 package sort;
 
-import java.util.ArrayList;
-
 public class Bubble {
     public static void main(String[] args) {
 //        int[] arr = {5, 6, 4, 2, 1, 3, 7};
@@ -44,7 +42,6 @@ public class Bubble {
             return;
         boolean isSwapped = false;
         for (int j = 0; j < n - 1; j++) {
-            isSwapped = false;
             if (arr[j] > arr[j + 1]) {
                 swap(arr, j, j + 1);
                 isSwapped = true;

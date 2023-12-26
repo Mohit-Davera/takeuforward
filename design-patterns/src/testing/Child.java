@@ -1,9 +1,16 @@
 package testing;
 
-public class Child {
-    String name = "parent";
+public class Child  {
+    String name;
 
-    public String printName(){
-        return "From Parent";
+    public Child(String name) {
+        this.name = name;
+    }
+
+    @Override
+    public String toString() {
+        return "Child{" +
+                "name='" + name + '\'' +
+                '}';
     }
 }
