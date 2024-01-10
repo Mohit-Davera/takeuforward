@@ -16,7 +16,7 @@ public class PrintSubSequenceSumK {
 
     }
 
-    static void printAllSubSeq(int[] nums, int target, int i, List<Integer> curr) {
+    public static void printAllSubSeq(int[] nums, int target, int i, List<Integer> curr) {
         if (i == nums.length) {
             if (target == 0){
                 System.out.println(curr);

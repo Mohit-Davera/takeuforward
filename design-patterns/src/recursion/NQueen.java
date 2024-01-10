@@ -44,15 +44,15 @@ public class NQueen {
 
     private static List<String> construct(char[][] board) {
         List<String> res = new LinkedList<>();
-        for (int i = 0; i < board.length; i++) {
-            String s = new String(board[i]);
+        for (char[] chars : board) {
+            String s = new String(chars);
             res.add(s);
         }
         return res;
     }
 
     public static void main(String[] args) {
-        List<List<String>> lists = solveNQueens(4);
+        List<List<String>> lists = solveNQueens(6);
         for (List<String> i : lists)
         {
             for (String s : i) {

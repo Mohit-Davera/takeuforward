@@ -5,8 +5,8 @@ import java.util.List;
 
 public class CombinationSum {
     public static void main(String[] args) {
-        int[] nums = new int[]{2, 3, 6, 7};
-        int target = 7;
+        int[] nums = new int[]{2,3,5};
+        int target = 8;
 
         List<List<Integer>> ans = new ArrayList<>();
         combinationSumOne(nums, target, 0, new ArrayList<>(), ans);

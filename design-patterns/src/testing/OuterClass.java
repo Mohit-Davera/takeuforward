@@ -1,21 +1,34 @@
 package testing;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+
 public class OuterClass {
     public static void main(String[] args) {
-        System.out.println(myPow(2,-2));
-    }
+/*        List<String> strings = new ArrayList<>();
+        strings.add("ABC");
+        strings.add("GHI");
+        strings.add("DEF");
 
-    public static double myPow(double x, int n) {
-        if(n == 0) return 1;
-        if(n == Integer.MIN_VALUE){
-            x = x * x;
-            n = n/2;
-        }
-        if(n < 0) {
-            n = -n;
-            x = 1/x;
-        }
+        String[] strings1 = {"AA","BB","CC"};
 
-        return (n%2 == 0) ? myPow(x * x, n/2) : x *  myPow(x * x, n/2);
+        ArrayList<String> collect = Arrays.stream(strings1).collect(Collectors.toCollection(ArrayList::new));
+        System.out.println(collect);
+
+        String[] strings2 = strings.toArray(String[]::new);*/
+        List<Integer> integers = new ArrayList<>();
+        integers.add(1000);
+        integers.add(2000);
+        integers.add(3000);
+
+        int[] ints = new int[]{1,2,3,4,5,6};
+
+        ArrayList<Integer> collect = Arrays.stream(ints).boxed().collect(Collectors.toCollection(ArrayList::new));
+        int[] ints1 = integers.stream().mapToInt(Integer::intValue).toArray();
+        integers.stream().toArray(i -> collect.toArray(new Integer[0]));
+        System.out.println();
+
     }
 }

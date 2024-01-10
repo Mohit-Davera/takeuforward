@@ -1,59 +1,46 @@
 package array.medium;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class SpiralMatrix {
     public static void main(String[] args) {
-
-        int N = 3;
-        int M = 3;
-        int K = 4;
-        int[][] A = {{1, 2, 3},
-            {4, 5, 6},
-            {7, 8, 9}};
-        System.out.println(findK(A,N,M,K));
+        int[][] mat = { { 1, 2, 3 },
+                { 4, 5, 6 },
+                { 7, 8, 9 } };
+        spiral(mat);
     }
 
-    public static int findK(int a[][], int n, int m, int k) {
-        int top = 0, down = n - 1, left = 0, right = m - 1;
-        int size = n * m;
-        int cnt = 0;
-        int ans = 0;
-        while (top <= down && left <= right) {
-            // toprow
-            for (int i = left; i <= right && cnt < size; i++) {
-                cnt++;
-                if (cnt == k) {
-                    ans = a[top][i];
-                }
+    public static void spiral(int[][] matrix) {
+        List<Integer> integers = new ArrayList<>();
+        int top = 0;
+        int bottom = matrix.length - 1;
+        int left = 0;
+        int right = matrix[0].length - 1;
+
+        while (top <= bottom && left <= right) {
+            for (int i = left; i <= right; i++) {
+                integers.add(matrix[top][i]);
             }
             top++;
 
-            //lastcol
-            for (int i = top; i <= down && cnt < size; i++) {
-                cnt++;
-                if (cnt == k) {
-                    ans = a[i][right];
-                }
+            for (int i = top; i <= bottom; i++) {
+                integers.add(matrix[i][right]);
             }
             right--;
-
-            //lastrow
-            for (int i = right; i >= left && cnt < size; i--) {
-                cnt++;
-                if (cnt == k) {
-                    ans = a[down][i];
+            if (top<=bottom) {
+                for (int i = right; i >= left; i--) {
+                    integers.add(matrix[bottom][i]);
                 }
+                bottom--;
             }
-            down--;
-
-            //firstcol
-            for (int i = down; i >= top && cnt < size; i--) {
-                cnt++;
-                if (cnt == k) {
-                    ans = a[i][left];
+            if (left<=right) {
+                for (int i = bottom; i >= top; i--) {
+                    integers.add(matrix[i][left]);
                 }
+                left++;
             }
-            left++;
         }
-        return ans;
+        System.out.println(integers);
     }
 }

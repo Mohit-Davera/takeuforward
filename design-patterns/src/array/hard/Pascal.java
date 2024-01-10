@@ -11,10 +11,12 @@ public class Pascal {
         System.out.println(firstType(5, 3));
         //reduce by one then apply formula
 
-        System.out.println(secondType(5));*/
+        System.out.println(secondType(5));*//*
 
         List<List<Integer>> lists = thirdType(5);
-        lists.forEach(System.out::println);
+        lists.forEach(System.out::println);*/
+
+        System.out.println(secondType(6));
     }
 
     public static int firstType(int row, int col) {

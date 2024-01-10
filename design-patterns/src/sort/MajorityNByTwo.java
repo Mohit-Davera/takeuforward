@@ -6,20 +6,20 @@ public class MajorityNByTwo {
         int n  = arr.length;
         int element = 0;
         int count = 0;
-        for (int i = 0; i < n; i++) {
-            if (count == 0){
+        for (int k : arr) {
+            if (count == 0) {
                 count = 1;
-                element = arr[i];
+                element = k;
 
-            } else if (element == arr[i]) {
+            } else if (element == k) {
                 count++;
-            }else{
+            } else {
                 count--;
             }
         }
         int elementCount = 0;
-        for (int i = 0; i < n; i++) {
-            if(arr[i] == element)
+        for (int j : arr) {
+            if (j == element)
                 elementCount++;
 
         }
