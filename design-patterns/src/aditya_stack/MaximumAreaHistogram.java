@@ -1,6 +1,6 @@
 package aditya_stack;
 
-import heap_aditya.Pair;
+import heap.heap_aditya.Pair;
 
 import java.util.Stack;
 

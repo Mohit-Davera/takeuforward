@@ -1,34 +1,46 @@
 package recursion.two;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class SubArraysWithSumK {
 
     public static void main(String[] args) {
         int[] a = {1, 2, 3, 1, 1, 1};
-        List<List<Integer>> lists = subarraysWithSumK(a, 3);
-//        PrintSubSequenceSumK.printAllSubSeq(a,3,0,new ArrayList<>());
-        System.out.println(lists);
-    }
-    public static List< List < Integer > > subarraysWithSumK(int []a, int k) {
-        Set< List < Integer > > ans = new HashSet<>();
-        pain(ans,new ArrayList<>(),0,a,k);
-        return new ArrayList<>(ans);
+        List<List<Integer>> naive = subarraysWithSumK(a, 3);
+        System.out.println(naive);
+
     }
 
-    public static void pain(Set<List<Integer>> ans, List<Integer> curr,int index,int[] a,int k){
-        if(index == a.length){
-            if(k == 0){
-                System.out.println(curr);
-//                Collections.sort(curr);
-                ans.add(new ArrayList(curr));
+    public static List< List < Integer > > subarraysWithSumK(int []a, long k) {
+        long sum = 0;
+        int n = a.length;
+
+        List< List < Integer > > ans = new ArrayList<>();
+        Map<Long,Integer> map = new HashMap<>();
+
+        map.put(0L,-1);
+
+        for(int i = 0;i<n;i++){
+            sum+=a[i];
+            if(map.containsKey(sum - k)){
+                ans.add(createSubArray(a,map.get(sum-k) + 1,i));
             }
-            return;
+            map.put(sum,i);
+        }
+        return ans;
+    }
+
+    public static List<Integer> createSubArray(int[] a,int start,int end){
+
+        List<Integer> arr = new ArrayList<>();
+        for(int i = start;i<=end;i++){
+            arr.add(a[i]);
         }
 
-        curr.add(a[index]);
-        pain(ans,curr,index + 1,a,k-a[index]);
-        curr.remove(curr.size() - 1);
-        pain(ans,curr,index + 1,a,k);
+        return arr;
     }
+
 }

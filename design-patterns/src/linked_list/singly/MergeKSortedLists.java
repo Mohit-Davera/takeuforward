@@ -1,6 +1,6 @@
 package linked_list.singly;
 
-import heap_aditya.Pair;
+import heap.heap_aditya.Pair;
 import linked_list.node.Node;
 
 import java.util.PriorityQueue;

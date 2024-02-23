@@ -16,7 +16,7 @@ public class NextGreaterElementRight {
         for (int i = n - 1; i >= 0 ; i--) {
             if (stack.empty()) {
                 ans[i] = -1;
-            } else if (stack.size() > 0 && stack.peek() > nums[i]) {
+            } else if (!stack.isEmpty() && stack.peek() > nums[i]) {
                 ans[i] = stack.peek();
             } else {
                 while (stack.size() > 0 && stack.peek() <= nums[i]) {

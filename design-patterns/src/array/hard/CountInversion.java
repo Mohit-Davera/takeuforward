@@ -1,13 +1,11 @@
 package array.hard;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class CountInversion {
     public static void main(String[] args) {
-        int[] a = {5, 4, 3, 2, 1};
-        int n = 5;
+        int[] a = {5, 4, 3, 2, 1,10,30,120,6,8,7};
+        int n = a.length;
         System.out.println(numberOfInversions(a, n));
+        for(int i : a) System.out.print(i+ " ");
     }
 
     public static int numberOfInversions(int[] a, int n) {
@@ -30,7 +28,7 @@ public class CountInversion {
         int count = 0;
         int left = low;
         int right = mid + 1;
-        int[] temp = new int[arr.length + 1];
+        int[] temp = new int[high + 1];
         int index = 0;
         while (left <= mid && right <= high) {
             if (arr[left] <= arr[right]) {

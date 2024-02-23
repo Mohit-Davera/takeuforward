@@ -22,11 +22,7 @@ public class CountOccurrenceOfAnagrams {
                     count--;
                 }
             }
-
-            if(end - start + 1 < k){
-                end++;
-            }
-            else{
+            if(end - start + 1 >= k){
                 if(count == 0){
                     ans++;
                 }
@@ -38,13 +34,13 @@ public class CountOccurrenceOfAnagrams {
                     }
                 }
                 start++;
-                end++;
             }
+            end++;
         }
         return ans;
     }
     public static void main(String[] args) {
-        String txt= "aabaabaa";
+        String txt= "aababbaaba";
         String ptr = "aaba";
         int search = search(ptr, txt);
         System.out.println(search);

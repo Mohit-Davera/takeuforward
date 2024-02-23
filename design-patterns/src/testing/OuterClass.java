@@ -25,10 +25,10 @@ public class OuterClass {
 
         int[] ints = new int[]{1,2,3,4,5,6};
 
-        ArrayList<Integer> collect = Arrays.stream(ints).boxed().collect(Collectors.toCollection(ArrayList::new));
-        int[] ints1 = integers.stream().mapToInt(Integer::intValue).toArray();
-        integers.stream().toArray(i -> collect.toArray(new Integer[0]));
-        System.out.println();
+        //List to array
+        int[] listToArr = integers.stream().mapToInt(Integer::intValue).toArray();
 
+        //array to list
+        List<Integer> collect = Arrays.stream(ints).boxed().collect(Collectors.toList());
     }
 }

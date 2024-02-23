@@ -6,8 +6,8 @@ public class MaxAreaRectangle {
                 {0, 1, 1, 0}, {1, 1, 1, 1}, {1, 1, 1, 1}, {1, 1, 0, 0}
         };
 
-        System.out.println('0'-'0');
-//        solution(mat);
+        System.out.println(0);
+        solution(mat);
     }
 
     static int solution(int[][] mat) {
