@@ -1,55 +1,20 @@
 package interview;
 
-import java.util.Comparator;
-import java.util.TreeMap;
+import java.util.Stack;
 
 public class Main {
-    public static void main(String[] args){
-        new Main().main();
-    }
-    public void main() {
+    public static void main(String[] args) {
+        Stack<Integer> st = new Stack<>();
+        st.push(10);
+        st.push(1);
+        st.push(20);
+        st.push(220);
+        st.push(2);
 
-
-        TreeMap<Employee, String> treeMap = new TreeMap<>(Comparator.comparing(Employee::getName));
-
-        Employee emp1 = new Employee("John", 101);
-        Employee emp2 = new Employee("Alice", 102);
-        Employee emp3 = new Employee("Bob", 103);
-        Employee emp4 = new Employee("Mob", 107);
-
-        treeMap.put(emp1, "Department A");
-        treeMap.put(emp2, "Department B");
-        treeMap.put(emp3, "Department C");
-        treeMap.put(emp4, "Department C");
-
-        // TreeMap will now be sorted based on the names of the employees
-        System.out.println(treeMap);
-
-    }
-
-    class Employee{
-        private String name;
-        private int id;
-
-        public Employee(String name, int id) {
-            this.name = name;
-            this.id = id;
-        }
-
-        public String getName() {
-            return name;
-        }
-
-        public int getId() {
-            return id;
-        }
-
-        @Override
-        public String toString() {
-            return "Employee{" +
-                    "name='" + name + '\'' +
-                    ", id=" + id +
-                    '}';
+        for (int i : st) System.out.print(i+ " ");
+        System.out.println();
+        while (!st.isEmpty()) {
+            System.out.print(st.pop()+ " ");
         }
     }
 }
