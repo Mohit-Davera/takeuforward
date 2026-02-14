@@ -1,7 +1,7 @@
 package aditya_stack;
 
 
-import heap.heap_aditya.Pair;
+import striver.heap.heap_aditya.Pair;
 
 import java.util.Stack;
 

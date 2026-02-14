@@ -1,21 +1,17 @@
 package testing;
 
-import java.util.HashMap;
-import java.util.LinkedHashMap;
-import java.util.Map;
-import java.util.TreeMap;
+import java.time.DayOfWeek;
+import java.time.LocalDate;
+import java.util.*;
 
 public class TextJustification {
     public static void main(String[] args) {
-        Map<Integer, Integer> hashMap = new HashMap<>();
-        Map<Integer, Integer> treemap = new TreeMap<>();
-        Map<Integer, Integer> linkMap = new LinkedHashMap<>();
+        LocalDate firstDate = LocalDate.parse("19/03/24");
 
-        System.out.println('b' - 'a');
+        LocalDate lastDate = LocalDate.parse("19/04/24");
 
-//        String s = addDayInDate("28/02/2023");
-//        System.out.println(s);
-
+        DayOfWeek dayOfWeek = lastDate.getDayOfWeek();
+        System.out.println(dayOfWeek);
 
     }
 
@@ -46,6 +42,7 @@ public class TextJustification {
 
         return day + "/" + month + "/" + year;
     }
+
 
 
 }

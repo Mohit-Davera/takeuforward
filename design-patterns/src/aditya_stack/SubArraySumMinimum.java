@@ -9,7 +9,7 @@ public class SubArraySumMinimum {
     [2, 9, 7, 8, 3, 4, 6, 1], the subarray using 3 as minimal is we need to choose a start index and an end index.
     How many choices we have for start index, it is 4 which are (9,7,8,3),
     how many choices we have for end index, it is 3 which are (3, 4, 6).
-    Then the combination number of sub array using 3 as minimal is 4 * 3.
+    Then the combination number of sub striver.array using 3 as minimal is 4 * 3.
     */
     public static void main(String[] args) {
         int[] arr = {4, -2, -3, 4, 1};

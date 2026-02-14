@@ -25,10 +25,10 @@ public class OuterClass {
 
         int[] ints = new int[]{1,2,3,4,5,6};
 
-        //List to array
+        //List to striver.array
         int[] listToArr = integers.stream().mapToInt(Integer::intValue).toArray();
 
-        //array to list
+        //striver.array to list
         List<Integer> collect = Arrays.stream(ints).boxed().collect(Collectors.toList());
     }
 }
